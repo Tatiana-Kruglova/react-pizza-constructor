@@ -9,17 +9,22 @@ import PizzaOrderResultComponent from "./PizzaOrderResultComponent";
 const addComponentIncrease = 29;
 const sizeIncrease = 50;
 const defaultPrice = 200;
-const sauceValues = [{id: 0, name: 'Томатный', groupName: 'sauce'}, {id: 1, name: 'Белый', groupName: 'sauce'},
+const sauceValues = [{id: 0, name: 'Томатный', groupName: 'sauce'},
+    {id: 1, name: 'Белый', groupName: 'sauce'},
     {id: 2, name: 'Острый', groupName: 'sauce'}];
 const doughValues = [{id: 0, name: 'Тонкое', comment: 'на тонком тесте', groupName: 'dough'},
     {id: 1, name: 'Пышное', comment: 'на пышном тесте', groupName: 'dough'}];
-const sizeValues = [{id: 0, name: '30 см', groupName: 'size'}, {id: 1, name: '35 см', groupName: 'size'}];
-const cheeseValues = [{id: 0, checked: false, name: 'Моцарелла'}, {id: 1, checked: false, name: 'Чеддер'},
-    {id: 2, checked: false, name: 'Дор Блю'}];
-const vegetablesValues =  [{id: 0, checked: false, name: 'Помидор'}, {id: 1, checked: false, name: 'Грибы'},
-    {id: 2, checked: false, name: 'Перец'}];
-const meatValues = [{id: 0, checked: false, name: 'Бекон'}, {id: 1, checked: false, name: 'Пепперони'},
-    {id: 2, checked: false, name: 'Ветчина'}];
+const sizeValues = [{id: 0, name: '30 см', groupName: 'size', increase: 0},
+    {id: 1, name: '35 см', groupName: 'size', increase: sizeIncrease}];
+const cheeseValues = [{id: 0, checked: false, name: 'Моцарелла', increase: addComponentIncrease},
+    {id: 1, checked: false, name: 'Чеддер', increase: addComponentIncrease},
+    {id: 2, checked: false, name: 'Дор Блю', increase: addComponentIncrease}];
+const vegetablesValues = [{id: 0, checked: false, name: 'Помидор', increase: addComponentIncrease},
+    {id: 1, checked: false, name: 'Грибы', increase: addComponentIncrease},
+    {id: 2, checked: false, name: 'Перец', increase: addComponentIncrease}];
+const meatValues = [{id: 0, checked: false, name: 'Бекон', increase: addComponentIncrease},
+    {id: 1, checked: false, name: 'Пепперони', increase: addComponentIncrease},
+    {id: 2, checked: false, name: 'Ветчина', increase: addComponentIncrease}];
 
 class PizzaOrderComponent extends Component {
     constructor(props) {
@@ -103,7 +108,7 @@ class PizzaOrderComponent extends Component {
     }
 
     getFinalPrice() {
-        let finalPrice = defaultPrice + (this.state.size == 1 ? sizeIncrease : 0);
+        let finalPrice = defaultPrice + sizeValues[this.state.size].increase;
         finalPrice = this.calculateCheckBoxPrice(finalPrice, this.state.cheese);
         finalPrice = this.calculateCheckBoxPrice(finalPrice, this.state.vegetables);
         finalPrice = this.calculateCheckBoxPrice(finalPrice, this.state.meat);
@@ -117,7 +122,7 @@ class PizzaOrderComponent extends Component {
         for (let i in values) {
             let value = values[i];
             if (value.checked) {
-                finalPrice += addComponentIncrease;
+                finalPrice += value.increase;
             }
         }
         return finalPrice;
