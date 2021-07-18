@@ -14,6 +14,12 @@ const sauceValues = [{id: 0, name: 'Томатный', groupName: 'sauce'}, {id:
 const doughValues = [{id: 0, name: 'Тонкое', comment: 'на тонком тесте', groupName: 'dough'},
     {id: 1, name: 'Пышное', comment: 'на пышном тесте', groupName: 'dough'}];
 const sizeValues = [{id: 0, name: '30 см', groupName: 'size'}, {id: 1, name: '35 см', groupName: 'size'}];
+const cheeseValues = [{id: 0, checked: false, name: 'Моцарелла'}, {id: 1, checked: false, name: 'Чеддер'},
+    {id: 2, checked: false, name: 'Дор Блю'}];
+const vegetablesValues =  [{id: 0, checked: false, name: 'Помидор'}, {id: 1, checked: false, name: 'Грибы'},
+    {id: 2, checked: false, name: 'Перец'}];
+const meatValues = [{id: 0, checked: false, name: 'Бекон'}, {id: 1, checked: false, name: 'Пепперони'},
+    {id: 2, checked: false, name: 'Ветчина'}];
 
 class PizzaOrderComponent extends Component {
     constructor(props) {
@@ -25,12 +31,9 @@ class PizzaOrderComponent extends Component {
             price: defaultPrice,
             dough: 0,
             sauce: 0,
-            cheese: [{id: 0, checked: false, name: 'Моцарелла'}, {id: 1, checked: false, name: 'Чеддер'},
-                {id: 2, checked: false, name: 'Дор Блю'}],
-            vegetables: [{id: 0, checked: false, name: 'Помидор'}, {id: 1, checked: false, name: 'Грибы'},
-                {id: 2, checked: false, name: 'Перец'}],
-            meat: [{id: 0, checked: false, name: 'Бекон'}, {id: 1, checked: false, name: 'Пепперони'},
-                {id: 2, checked: false, name: 'Ветчина'}]
+            cheese: cheeseValues,
+            vegetables: vegetablesValues,
+            meat: meatValues
         };
         this.setPizzaSize = this.setPizzaSize.bind(this);
         this.setPizzaDough = this.setPizzaDough.bind(this);
