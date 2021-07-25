@@ -1,6 +1,6 @@
-const PizzaRadioButton = ({label, name, value}) => {
+const PizzaRadioButton = ({label, name, value, checked, onChange}) => {
     return (
-        <label><input type="radio" name={name} value={value} defaultChecked={value === 0}/>{label}</label>
+        <label><input type="radio" name={name} value={value} checked={checked} onChange={() => onChange(this)}/>{label}</label>
     );
 };
 

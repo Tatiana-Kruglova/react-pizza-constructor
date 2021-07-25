@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PizzaConfiguratorComponent from './PizzaConfiguratorComponent';
+import PizzaConfigurator from './PizzaConfigurator';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PizzaConfiguratorComponent />
+    <PizzaConfigurator />
   </React.StrictMode>,
   document.getElementById('root')
 );
