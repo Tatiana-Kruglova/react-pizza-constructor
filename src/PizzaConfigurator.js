@@ -9,7 +9,7 @@ class PizzaConfigurator extends Component {
                 <div><h1>Собери свою пиццу</h1></div>
                 <PizzaOrder/>
                 <hr/>
-                <button onClick={methodDoesNotExist}>Break the world</button>;
+                <button onClick={() => throw new Error('Something went wrong')}>Break the world</button>;
             </div>
         )
     }
