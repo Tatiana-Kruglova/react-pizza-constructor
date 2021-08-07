@@ -17,6 +17,7 @@ export const PizzaOrder = () => {
 
     useEffect(() => {
         calculateFinalPrice();
+        // eslint-disable-next-line
     }, [pizzaSize, pizzaDough, pizzaSauce, pizzaCheese, pizzaVegetables, pizzaMeat]);
 
     const calculateValues = (setter, stateValue, option, checked) => {
