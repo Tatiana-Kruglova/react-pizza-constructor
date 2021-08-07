@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+}
+
+.left-element {
+  display: inline-block;
+  float: left;
+}
+
+.right-element {
+  display: inline-block;
+  float: left;
+}
+
+.bottom-element{
+  clear: both;
+  float: left;
+}
+
+.orderbutton{
+  clear: both;
+  float: left;
+}
