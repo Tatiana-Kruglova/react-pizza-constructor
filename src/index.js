@@ -8,6 +8,8 @@ import {Integrations} from '@sentry/tracing';
 
 Sentry.init({
     dsn: "https://e9cadd0010764a70b8f57b044057272d@o948162.ingest.sentry.io/5897381",
+    release: process.env.REACT_APP_SENTRY_RELEASE, // Нам важна вот эта строчка
+    autoSessionTracking: true,
     integrations: [new Integrations.BrowserTracing()],
 
 // Set tracesSampleRate to 1.0 to capture 100%

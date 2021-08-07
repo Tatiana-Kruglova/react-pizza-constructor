@@ -30,7 +30,7 @@ jobs:
     - name: yarn install, build, and test
       run: |
         yarn install
-        yarn build
+        yarn release
     - name: Create Sentry release
       uses: getsentry/action-release@v1
       env:
