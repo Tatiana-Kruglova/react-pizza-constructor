@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import PizzaConfigurator from './PizzaConfigurator';
 import reportWebVitals from './reportWebVitals';
+import * as Sentry from '@sentry/react';
+import {Integrations} from '@sentry/tracing';
+
+Sentry.init({
+    dsn: "https://e9cadd0010764a70b8f57b044057272d@o948162.ingest.sentry.io/5897381",
+    integrations: [new Integrations.BrowserTracing()],
+
+// Set tracesSampleRate to 1.0 to capture 100%
+// of transactions for performance monitoring.
+// We recommend adjusting this value in production
+    tracesSampleRate: 1.0,
+});
 
 ReactDOM.render(
   <React.StrictMode>

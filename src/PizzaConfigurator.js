@@ -8,6 +8,8 @@ class PizzaConfigurator extends Component {
                 <h1>STAGING</h1>
                 <div><h1>Собери свою пиццу</h1></div>
                 <PizzaOrder/>
+                <hr/>
+                <button onClick={methodDoesNotExist}>Break the world</button>;
             </div>
         )
     }
